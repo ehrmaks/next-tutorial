@@ -4,9 +4,18 @@ import React, { useState, useEffect } from 'react'
 import ItemList from '@components/item/ItemList'
 import { Divider, Header, Loader } from 'semantic-ui-react'
 
+type listType = Array<{
+	id: number
+	image_link: string
+	name: string
+	category: string
+	product_type: string
+	price: number
+}>
+
 export default function Home() {
 	const API_URL = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline'
-	const [list, setList] = useState([])
+	const [list, setList] = useState([] as listType)
 	const [isLoading, setIsLoading] = useState(true)
 
 	function getData() {

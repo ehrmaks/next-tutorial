@@ -3,15 +3,18 @@ import { Grid, Image } from 'semantic-ui-react'
 import styles from '@components/styles/ItemList.module.css'
 import Link from 'next/link'
 
-interface ListProps {
-	id: number
-	description: string
-	name: string
-	image_link: string
-	price: string
+type ListProps = {
+	list: Array<{
+		id: number
+		image_link: string
+		name: string
+		category: string
+		product_type: string
+		price: number
+	}>
 }
 
-export default function ItemList({ list }) {
+export default function ItemList({ list }: ListProps) {
 	return (
 		<Grid columns={3}>
 			<Grid.Row>

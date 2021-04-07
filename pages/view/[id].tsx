@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Item from '@/components/item/Item'
 import { Loader } from 'semantic-ui-react'
 
-interface itemProps {
+interface itemType {
 	api_featured_image: string
 	brand: string
 	category: string
@@ -28,7 +28,7 @@ export default function Post() {
 	const router = useRouter()
 	const { id } = router.query
 	const API_URL = `https://makeup-api.herokuapp.com/api/v1/products/${id}.json`
-	const [item, setItem] = useState({} as itemProps)
+	const [item, setItem] = useState({} as itemType)
 	const [isLoading, setIsLoading] = useState(true)
 
 	function getData() {
