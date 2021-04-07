@@ -1,24 +1,27 @@
 import React, { useState } from 'react'
 import { Menu } from 'semantic-ui-react'
+import { useRouter } from 'next/router'
 
 export default function Gnb() {
-	const [activeItem, setActiveItem] = useState('home')
+	const router = useRouter()
+	let activeItem
+	if (router.pathname === '/') activeItem = 'home'
+	else if (router.pathname === '/about') activeItem = 'about'
 
-	const handleItemClick = (e: React.SyntheticEvent, { name }: { name: string }): void => {
+	const goLink = (e: React.SyntheticEvent, { name }: { name: string }): void => {
 		e.preventDefault()
 		// const target = e.target as typeof e.target & {
 		// 	name: []
 		// 	value: string
 		// }
-		console.log(name)
-		setActiveItem(name)
+		if (name === 'home') router.push('/')
+		else if (name === 'about') router.push('/about')
 	}
 
 	return (
 		<Menu inverted>
-			<Menu.Item name="home" active={activeItem === 'home'} onClick={handleItemClick} />
-			<Menu.Item name="messages" active={activeItem === 'messages'} onClick={handleItemClick} />
-			<Menu.Item name="friends" active={activeItem === 'friends'} onClick={handleItemClick} />
+			<Menu.Item name="home" active={activeItem === 'home'} onClick={goLink} />
+			<Menu.Item name="about" active={activeItem === 'about'} onClick={goLink} />
 		</Menu>
 	)
 }

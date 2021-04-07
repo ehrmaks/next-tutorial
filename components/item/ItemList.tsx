@@ -21,7 +21,7 @@ export default function ItemList({ list }: ListProps) {
 				{list.map(prdt => {
 					return (
 						<Grid.Column key={prdt.id}>
-							<Link href={`/view/${prdt.id}`}>
+							<Link href="/view/[id]" as={`/view/${prdt.id}`}>
 								<a>
 									<div className={styles.wrap}>
 										<Image src={prdt.image_link} className={styles.img_item} />
