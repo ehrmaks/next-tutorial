@@ -23,9 +23,10 @@ interface itemType {
 		updated_at: string
 		website_link: string
 	}
+	name: string
 }
 
-export default function Post({ item }: itemType) {
+export default function Post({ item, name }: itemType) {
 	// const router = useRouter()
 	// const { id } = router.query
 	// const API_URL = `https://makeup-api.herokuapp.com/api/v1/products/${id}.json`
@@ -51,10 +52,6 @@ export default function Post({ item }: itemType) {
 	// }, [id])
 	return (
 		<>
-			<Head>
-				<title>{item.name}</title>
-				<meta name="description" content={item.description} />
-			</Head>
 			{/* {isLoading && (
 				<div style={{ padding: '150px 0' }}>
 					<Loader inline="centered" active>
@@ -63,7 +60,16 @@ export default function Post({ item }: itemType) {
 				</div>
 			)} */}
 			{/* {!isLoading && } */}
-			{item && <Item item={item}></Item>}
+			{item && (
+				<>
+					<Head>
+						<title>{item.name}</title>
+						<meta name="description" content={item.description} />
+					</Head>
+					{name} 환경 입니다.
+					<Item item={item}></Item>
+				</>
+			)}
 		</>
 	)
 }
@@ -86,6 +92,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 	return {
 		props: {
 			item: data,
+			name: process.env.NODE_ENV,
 		},
 	}
 }
@@ -94,4 +101,5 @@ export const getServerSideProps: GetServerSideProps = async context => {
  * 상세 화면은 현재 껍데기만 pre rendering 된 상태이다.
  * 그래서 server side rendering을 해줘야 한다.
  * 그래야 검색엔진에서도 읽을 수 있고, 메신저에 메시지를 보낼 때도 정보가 나온다.
+ * 서버 에러는 production에서 확인할 수 있다. dev환경이라면 어디서 에러가 났다라고 표기 되기 때문이다.
  */
