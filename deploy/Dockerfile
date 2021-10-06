@@ -6,7 +6,7 @@ RUN cp /usr/share/zoneinfo/${TZ} /etc/localtime
 WORKDIR /usr/app
 # COPY node_modules ./node_modules
 # COPY .next ./.next
-COPY ./package*.json ./
+COPY ../package*.json ./
 COPY public ./public
 RUN yarn
 EXPOSE 3000
