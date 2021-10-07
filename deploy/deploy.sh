@@ -11,6 +11,8 @@ cp ${GREEN_FILE} /usr/local/bin/${DOCKER_APP_NAME}-green.yml
 
 EXIST_BLUE=$(sudo /usr/local/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} ps | grep Up)
 
+cat EXIST_BLUE
+
 if [ -z "$EXIST_BLUE" ]; then
     echo "blue up"
     sudo /usr/local/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} up -d --build
