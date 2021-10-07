@@ -1,6 +1,7 @@
 #!/bin/bash
 
-HOME_DIR=/home/ec2-user/next_tutorial
+#HOME_DIR=/home/ec2-user/next_tutorial
+HOME_DIR=/var/jenkins_home/workspace/Next_tutorial
 DOCKER_APP_NAME=next_tutorial
 BLUE_FILE=${HOME_DIR}/deploy/docker-compose-blue.yml
 GREEN_FILE=${HOME_DIR}/deploy/docker-compose-green.yml
