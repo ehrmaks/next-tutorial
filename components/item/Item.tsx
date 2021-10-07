@@ -1,5 +1,5 @@
 import { Button, Header, Image } from 'semantic-ui-react'
-import styles from '@components/styles/item.module.css'
+import styles from '@components/styles/Item.module.css'
 
 interface itemProps {
 	item: {
