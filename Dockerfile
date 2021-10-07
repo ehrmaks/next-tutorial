@@ -6,13 +6,15 @@ WORKDIR /usr/app
 
 # Copy package.json and package-lock.json before other files
 # Utilise Docker cache to save re-installing dependencies if unchanged
-COPY ./package*.json ./
+COPY package*.json ./
 
 # Install dependencies
-RUN yarn install --production
+RUN yarn install && yarn cache clean --force
 
 # Copy all files
 COPY ./ ./
+
+ENV NODE_ENV=production
 
 # Build app
 RUN yarn build
