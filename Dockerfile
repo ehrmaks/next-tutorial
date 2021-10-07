@@ -1,6 +1,10 @@
 ####################################################### 
 FROM node:14.17.3-alpine
 
+ENV TZ Asia/Seoul
+RUN apk --no-cache add tzdata
+RUN cp /usr/share/zoneinfo/${TZ} /etc/localtime
+
 # Set working directory
 WORKDIR /usr/app
 
@@ -27,4 +31,4 @@ EXPOSE 3000
 USER node
 
 # Run npm start script when container starts
-CMD [ "yarn", "start" ]
+CMD ["yarn", "start"]
