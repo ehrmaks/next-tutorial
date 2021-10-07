@@ -41,7 +41,7 @@ export default function Home({ list }: ListType) {
 		<div>
 			<Head>
 				<title>HOME | Jookbob2</title>
-				<meta name="description" content="코딩 앙마 홈입니다." />
+				<meta name="description" content="죽밥이 홈입니다." />
 			</Head>
 			{/* {isLoading && (
 				<div style={{ padding: '300px 0' }}>
@@ -53,12 +53,12 @@ export default function Home({ list }: ListType) {
 			{/* {!isLoading && ( */}
 			<>
 				<Header as="h3" style={{ paddingTop: 20 }}>
-					베스트 상품
+					베스트 상품ㅋ
 				</Header>
 				<Divider></Divider>
 				<ItemList list={list.slice(0, 9)}></ItemList>
 				<Header as="h3" style={{ paddingTop: 20 }}>
-					신상품
+					신상품ㅋ
 				</Header>
 				<Divider></Divider>
 				<ItemList list={list.slice(9)}></ItemList>
