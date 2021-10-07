@@ -6,6 +6,9 @@ DOCKER_APP_NAME=next_tutorial
 BLUE_FILE=${HOME_DIR}/deploy/docker-compose-blue.yml
 GREEN_FILE=${HOME_DIR}/deploy/docker-compose-green.yml
 
+cp ${BLUE_FILE} /usr/local/bin/docker-compose/${DOCKER_APP_NAME}-blue
+cp ${GREEN_FILE} /usr/local/bin/docker-compose/${DOCKER_APP_NAME}-green
+
 EXIST_BLUE=$(sudo /usr/local/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} ps | grep Up)
 
 if [ -z "$EXIST_BLUE" ]; then
