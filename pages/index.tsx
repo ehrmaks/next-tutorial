@@ -40,7 +40,7 @@ export default function Home({ list }: ListType) {
 	return (
 		<div>
 			<Head>
-				<title>HOME | 코딩앙마</title>
+				<title>HOME | Jookbob2</title>
 				<meta name="description" content="코딩 앙마 홈입니다." />
 			</Head>
 			{/* {isLoading && (

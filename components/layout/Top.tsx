@@ -8,7 +8,7 @@ export default function Top() {
 				<div style={{ flex: '100px 0 0' }}>
 					<img style={{ display: 'block', width: 80 }} src="/images/logo.png" alt="logo" />
 				</div>
-				<Header as="h1">코딩앙마</Header>
+				<Header as="h1">Jookbob2</Header>
 			</div>
 			<Gnb></Gnb>
 		</div>
