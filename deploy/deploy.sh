@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOME_DIR=/home/ec2-user/next_tutorial
+HOME_DIR=/home/ec2-user/next-tutorial
 DOCKER_APP_NAME=tutorial
 BLUE_FILE=${HOME_DIR}/deploy/docker-compose-blue.yml
 GREEN_FILE=${HOME_DIR}/deploy/docker-compose-green.yml
