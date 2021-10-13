@@ -9,7 +9,9 @@ services:
         ports:
             - 3002:3000
     nginx:
-        build: ../nginx
+        build: 
+            context: /home/ec2-user/next-tutorial
+            dockerfile: ./nginx/Dockerfile
         restart: unless-stopped
         ports:
             - 80:80
