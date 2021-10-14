@@ -12,16 +12,12 @@ if [ -z "$EXIST_BLUE" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} up -d --build
     sleep 5
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} down
-    echo "docker object remove..."
     sudo /usr/bin/docker system prune -f
-    echo "docker object remove complete."
 else
     echo "green up"
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} up -d --build
     sleep 5
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} down
-    echo "docker object remove..."
     sudo /usr/bin/docker system prune -f
-    echo "docker object remove complete."
 fi
 exit 0
