@@ -14,8 +14,10 @@ if [ -z "$EXIST_BLUE" ]; then
     # RUNNING=$(docker inspect --format="{{.State.Running}}" ${DOCKER_APP_NAME}-blue_nextjs_1 2> /dev/null)
     # if [ "$RUNNING" == "true" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} down
-    sudo docker rm -f $(docker ps -aq)
+    sleep 5
+    # sudo docker rm -f $(docker ps -aq)
     sudo /usr/bin/docker system prune -f
+    sleep 5
 
     #     exit 0
     # else
@@ -29,8 +31,10 @@ else
     # RUNNING=$(docker inspect --format="{{.State.Running}}" ${DOCKER_APP_NAME}-green_nextjs_1 2> /dev/null)
     # if [ "$RUNNING" == "true" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} down
-    sudo docker rm -f $(docker ps -aq)
+    sleep 5
+    # sudo docker rm -f $(docker ps -aq)
     sudo /usr/bin/docker system prune -f
+    sleep 5
 
     #     exit 0
     # else
