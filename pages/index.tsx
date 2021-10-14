@@ -53,12 +53,12 @@ export default function Home({ list }: ListType) {
 			{/* {!isLoading && ( */}
 			<>
 				<Header as="h3" style={{ paddingTop: 20 }}>
-					Best 상품f
+					Best 상품
 				</Header>
 				<Divider></Divider>
 				<ItemList list={list.slice(0, 9)}></ItemList>
 				<Header as="h3" style={{ paddingTop: 20 }}>
-					New 상품f
+					New 상품
 				</Header>
 				<Divider></Divider>
 				<ItemList list={list.slice(9)}></ItemList>
