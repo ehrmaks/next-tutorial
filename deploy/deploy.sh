@@ -15,6 +15,9 @@ if [ -z "$EXIST_BLUE" ]; then
     # if [ "$RUNNING" == "true" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} stop
     sudo /usr/bin/docker system prune -f
+
+    sudo systemctl start docker
+    sudo chmod 666 /var/run/docker.sock
     #     exit 0
     # else
     #     /usr/bin/docker system prune -f
@@ -28,6 +31,9 @@ else
     # if [ "$RUNNING" == "true" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} stop
     sudo /usr/bin/docker system prune -f
+
+    sudo systemctl start docker
+    sudo chmod 666 /var/run/docker.sock
     #     exit 0
     # else
     #     /usr/bin/docker system prune -f
