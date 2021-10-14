@@ -14,9 +14,6 @@ if [ -z "$EXIST_BLUE" ]; then
     # RUNNING=$(docker inspect --format="{{.State.Running}}" ${DOCKER_APP_NAME}-blue_nextjs_1 2> /dev/null)
     # if [ "$RUNNING" == "true" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} down
-    echo "docker container remove..."
-    sudo /usr/bin/docker rm -f $(docker ps -aq)
-    echo "docker container remove complete."
     echo "docker object remove..."
     sudo /usr/bin/docker system prune -f
     echo "docker object remove complete."
@@ -33,9 +30,6 @@ else
     # RUNNING=$(docker inspect --format="{{.State.Running}}" ${DOCKER_APP_NAME}-green_nextjs_1 2> /dev/null)
     # if [ "$RUNNING" == "true" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} down
-    echo "docker container remove..."
-    sudo /usr/bin/docker rm -f $(docker ps -aq)
-    echo "docker container remove complete."
     echo "docker object remove..."
     sudo /usr/bin/docker system prune -f
     echo "docker object remove complete."
