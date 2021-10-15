@@ -4,8 +4,8 @@ HOME_DIR=/home/ec2-user/next-tutorial
 DOCKER_APP_NAME=tutorial
 NGINX_FILE=${HOME_DIR}/nginx/docker-compose-nginx.yml
 
-echo "nginx down"
-sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-nginx -f ${NGINX_FILE} down
+# echo "nginx down"
+# sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-nginx -f ${NGINX_FILE} down
 
 echo "nginx up"
 sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-nginx -f ${NGINX_FILE} up -d --build
