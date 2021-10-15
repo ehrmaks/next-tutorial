@@ -12,12 +12,12 @@ if [ -z "$EXIST_BLUE" ]; then
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} up -d --build
     sleep 5
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} down
-    sudo /usr/bin/docker system prune -f
+    # sudo /usr/bin/docker system prune -f
 else
     echo "green up"
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-green -f ${GREEN_FILE} up -d --build
     sleep 5
     sudo /usr/bin/docker-compose -p ${DOCKER_APP_NAME}-blue -f ${BLUE_FILE} down
-    sudo /usr/bin/docker system prune -f
+    # sudo /usr/bin/docker system prune -f
 fi
 exit 0
